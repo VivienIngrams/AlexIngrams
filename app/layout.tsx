@@ -1,10 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Khand, Playfair_Display } from "next/font/google";
 import Link from "next/link";
-// import Logo from './alpha-logo.svg'
+import Logo from "./alpha-logo.svg";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ variable: '--font-inter',subsets: ["latin"] });
+const khand = Khand({ weight: ["400"], variable: '--font-khand', subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Alex Ingrams",
@@ -19,13 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${khand.variable} ${inter.variable}`}>
         <div className="flex h-screen flex-col justify-between pt-5 text-yellow-600 sm:pb-10">
           <header className="flex w-full items-center justify-between">
             <div>
               <Link href="/" aria-label="Alex-Homepage">
                 <div className="flex items-center justify-between">
-                  <div className="mr-3">{/* <Logo /> */}</div>
+                  <div className="mr-3">
+                    <Image priority src={Logo} alt="Alex's HomePage" />
+                  </div>
                 </div>
               </Link>
             </div>
@@ -47,7 +52,7 @@ export default function RootLayout({
                   a.r.ingrams@fgga.leidenuniv.nl
                 </Link>
               </div>
-              <div className="mb-8 text-center text-sm font-medium text-gray-600 ">
+              <div className="mb-8 text-center text-sm font-medium font-inter text-gray-600 ">
                 <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
                   Leiden University Institute of Public Administration
                   <p>The Netherlands</p>

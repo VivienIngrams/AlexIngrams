@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Card = ({ title, description, href, linkText }) => (
   <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
     <div
-      className={`overflow-hidden rounded-md border-2 border-yellow-600 border-opacity-60 bg-white/60 dark:border-gray-700`}
+      className={`overflow-hidden rounded-md border-2 border-yellow-600 border-opacity-60 bg-white/60 `}
     >
       <div className="p-6">
         <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-neutral-600">
@@ -15,13 +15,13 @@ const Card = ({ title, description, href, linkText }) => (
             title
           )}
         </h2>
-        <p className="prose mb-3  max-w-none font-khand text-gray-500 dark:text-gray-400">
+        <p className="prose mb-3  max-w-none font-khand text-gray-500">
           {description}
         </p>
         {href && (
           <Link
             href={href}
-            className="text-base font-medium leading-6 text-yellow-600 hover:text-primary-600 dark:hover:text-primary-400"
+            className="text-base font-medium leading-6 text-yellow-600 hover:text-primary-600"
             aria-label={`Link to ${title}`}
           >
             {linkText} &rarr;

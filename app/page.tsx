@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+
+
 
 export default function Home() {
   return (
@@ -13,11 +16,11 @@ export default function Home() {
             alt="Alex Ingrams"
           />
           <div className=" flex flex-col items-end xl:col-span-2 ">
-            <h3 className=" pt-10 font-playfair text-5xl leading-8 tracking-tight text-black md:pt-40">
+            <h3 className=" pt-10 font-khand text-5xl leading-8 tracking-tight text-black md:pt-40">
               Alex Ingrams
             </h3>
           </div>
-          <div className="prose max-w-none pt-2 text-right font-khand md:ml-20 md:pl-20 md:pb-10">
+          <div className="prose max-w-none font-inter pt-2 text-right md:ml-20 md:pl-20 md:pb-10">
             <div>
               <p>
                 Assistant professor in the Institute of Public Administration at
