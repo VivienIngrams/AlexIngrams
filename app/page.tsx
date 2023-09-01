@@ -6,21 +6,19 @@ import { Playfair_Display } from "next/font/google";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="bg-neutral-200">
         <div className="flex-col items-center">
+          <div className=" flex flex-col items-end xl:col-span-2 ">
           <Image
             src="/images/profile.png" // Route of the image file
             height={144} // Desired size with correct aspect ratio
             width={100} // Desired size with correct aspect ratio
             alt="Alex Ingrams"
           />
-          <div className=" flex flex-col items-end xl:col-span-2 ">
-            <h3 className=" pt-10 font-khand text-5xl leading-8 tracking-tight text-black md:pt-40">
+            <h3 className=" py-4 font-khand underline decoration-yellow-600 decoration-2 text-5xl leading-8 tracking-tight text-black ">
               Alex Ingrams
             </h3>
           </div>
-          <div className="prose max-w-none font-inter pt-2 text-right md:ml-20 md:pl-20 md:pb-10">
+          <div className="text-sm md:text-md max-w-none font-inter text-neutral-500 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
             <div>
               <p>
                 Assistant professor in the Institute of Public Administration at
@@ -32,7 +30,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex-grow items-center text-center xl:col-span-2">
+          <div className="items-center text-center xl:col-span-2 py-4">
             <Link
               className="mx-10 rounded border-2 border-yellow-600 bg-neutral-100 px-4 py-2 font-khand font-bold text-black "
               href="/projects"
@@ -44,7 +42,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
-    </main>
+
+ 
   );
 }

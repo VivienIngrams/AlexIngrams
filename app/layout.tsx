@@ -5,9 +5,12 @@ import Link from "next/link";
 import Logo from "./alpha-logo.svg";
 import Image from "next/image";
 
-const inter = Inter({ variable: '--font-inter',subsets: ["latin"] });
-const khand = Khand({ weight: ["400"], variable: '--font-khand', subsets: ["latin"] });
-
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const khand = Khand({
+  weight: ["400"],
+  variable: "--font-khand",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Alex Ingrams",
@@ -22,44 +25,46 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${khand.variable} ${inter.variable}`}>
-        <div className="flex h-screen flex-col justify-between pt-5 text-yellow-600 sm:pb-10">
-          <header className="flex w-full items-center justify-between">
-            <div>
-              <Link href="/" aria-label="Alex-Homepage">
-                <div className="flex items-center justify-between">
-                  <div className="mr-3">
-                    <Image priority src={Logo} alt="Alex's HomePage" />
+      <body className={` min-h-screen ${khand.variable} ${inter.variable}`}>
+        <div className="xl:max-w-8xl mx-auto max-w-5xl px-4 sm:px-6 xl:px-0">
+          <div className="flex h-screen flex-col justify-between pt-5 sm:pb-10">
+            <header className="flex w-full items-center justify-between">
+              <div>
+                <Link href="/" aria-label="Alex-Homepage">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <Image priority src={Logo} alt="Alex's HomePage" />
+                    </div>
+                      <p className="font-khand text-yellow-600 pt-3">Home</p>
                   </div>
-                </div>
-              </Link>
-            </div>
-            <div className="flex items-center text-base  leading-5"></div>
-          </header>
-          <main>{children}</main>
-
-          <footer>
-            <div className="flex flex-col items-center">
-              <div className="mb-3 flex space-x-4">
-                {/* <SocialIcon kind="googleScholar" href='https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en' size="6" />
+                </Link>
+              </div>
+              <div className="flex items-center text-base leading-5"></div>
+            </header>
+            <main className="flex flex-col items-center">{children}</main>
+            <footer >
+              <div className="flex flex-col items-center">
+                <div className="mb-3 flex space-x-4">
+                  {/* <SocialIcon kind="googleScholar" href='https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en' size="6" />
           <SocialIcon kind="linkedin" href='https://www.linkedin.com/in/aringrams/?originalSubdomain=nl' size="6" />
           <SocialIcon kind="twitter" href='https://twitter.com/alexingrams' size="6" />
           <SocialIcon kind="researchGate" href='https://www.researchgate.net/profile/Alex-Ingrams' size="6" />
           <SocialIcon kind="mail" href='mailto:a.r.ingrams@fgga.leidenuniv.nl' size="6" /> */}
+                </div>
+                <div className="mb-2 flex flex-col items-center text-yellow-600 space-x-2 text-sm text-gray-600 ">
+                  <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
+                    a.r.ingrams@fgga.leidenuniv.nl
+                  </Link>
+                </div>
+                <div className=" text-center text-sm font-medium text-neutral-500 ">
+                  <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
+                    Leiden University Institute of Public Administration
+                    <p>The Netherlands</p>
+                  </Link>
+                </div>
               </div>
-              <div className="mb-2 flex flex-col items-center space-x-2 text-sm text-gray-600 ">
-                <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
-                  a.r.ingrams@fgga.leidenuniv.nl
-                </Link>
-              </div>
-              <div className="mb-8 text-center text-sm font-medium font-inter text-gray-600 ">
-                <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
-                  Leiden University Institute of Public Administration
-                  <p>The Netherlands</p>
-                </Link>
-              </div>
-            </div>
-          </footer>
+            </footer>
+          </div>
         </div>
       </body>
     </html>

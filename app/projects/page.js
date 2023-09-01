@@ -70,9 +70,9 @@ export default function Projects() {
             ))}
           </div>
         </div>
-      </div>
-      <div className=" pb-2 text-right">
+      <div className=" pb-2 text-yellow-600 font-khand text-right">
         <Link href="/admin">Admin</Link>
+      </div>
       </div>
     </>
   )
