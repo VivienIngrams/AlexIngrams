@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
 
-import { signInWithEmailAndPassword } from 'firebase/auth'
+// import { signInWithEmailAndPassword } from 'firebase/auth'
 
-import auth from 'firebase-config'
+// import auth from 'firebase-config'
 
 function LoginForm(props) {
   const emailRef = useRef('')
