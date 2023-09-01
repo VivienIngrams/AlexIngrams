@@ -1,4 +1,3 @@
-import { title } from '@/data/siteMetadata'
 import React, { useState, useEffect, useCallback, useRef } from 'react'
 
 function EditProjects(props) {
