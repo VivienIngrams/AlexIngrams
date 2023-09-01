@@ -23,30 +23,38 @@ export default function RootLayout({
         <div className="flex h-screen flex-col justify-between pt-5 text-yellow-600 sm:pb-10">
           <header className="flex w-full items-center justify-between">
             <div>
-              <Link href="/" aria-label='Alex-Homepage'>
+              <Link href="/" aria-label="Alex-Homepage">
                 <div className="flex items-center justify-between">
-                  <div className="mr-3">
-                    {/* <Logo /> */}
-                  </div>
+                  <div className="mr-3">{/* <Logo /> */}</div>
                 </div>
               </Link>
             </div>
-            <div className="flex items-center text-base  leading-5">
-              {/* <div className="">
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="p-1 font-semibold uppercase text-yellow-600 dark:text-gray-100 sm:p-4 sm:text-xl"
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div> */}
-            </div>
+            <div className="flex items-center text-base  leading-5"></div>
           </header>
           <main>{children}</main>
-          {/* <Footer /> */}
+
+          <footer>
+            <div className="flex flex-col items-center">
+              <div className="mb-3 flex space-x-4">
+                {/* <SocialIcon kind="googleScholar" href='https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en' size="6" />
+          <SocialIcon kind="linkedin" href='https://www.linkedin.com/in/aringrams/?originalSubdomain=nl' size="6" />
+          <SocialIcon kind="twitter" href='https://twitter.com/alexingrams' size="6" />
+          <SocialIcon kind="researchGate" href='https://www.researchgate.net/profile/Alex-Ingrams' size="6" />
+          <SocialIcon kind="mail" href='mailto:a.r.ingrams@fgga.leidenuniv.nl' size="6" /> */}
+              </div>
+              <div className="mb-2 flex flex-col items-center space-x-2 text-sm text-gray-600 ">
+                <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
+                  a.r.ingrams@fgga.leidenuniv.nl
+                </Link>
+              </div>
+              <div className="mb-8 text-center text-sm font-medium text-gray-600 ">
+                <Link href="https://www.universiteitleiden.nl/en/staffmembers/alex-ingrams#tab-1">
+                  Leiden University Institute of Public Administration
+                  <p>The Netherlands</p>
+                </Link>
+              </div>
+            </div>
+          </footer>
         </div>
       </body>
     </html>
