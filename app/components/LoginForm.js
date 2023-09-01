@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
 
-// import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
-// import auth from 'firebase-config'
+import auth from '../../firebase'
 
 function LoginForm(props) {
   const emailRef = useRef('')
@@ -38,7 +38,7 @@ function LoginForm(props) {
               Email
             </label>
             <input
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-60 md:w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="email"
               id="email"
               ref={emailRef}
@@ -49,7 +49,7 @@ function LoginForm(props) {
               Password
             </label>
             <input
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-60 md:w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
               type="password"
               id="password"
               ref={passwordRef}

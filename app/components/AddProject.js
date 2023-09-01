@@ -92,7 +92,7 @@ function AddProject(props) {
               onChange={(event) => setProject({ ...project, linkText: event.target.value })}
             ></textarea>
           </div>
-          <div className="m-5 text-center">
+          <div className="m-5 text-center text-yellow-600">
             <p>{props.message}</p>
           </div>
           <div className="mx-10 mb-20 rounded-2xl bg-yellow-600 p-2">
