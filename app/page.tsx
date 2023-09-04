@@ -1,22 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import OpenResume from './components/OpenResume'
-
+import OpenResume from "./components/OpenResume";
 
 export default function Home() {
-
   return (
     <div className="flex-col items-center">
       <div className="flex justify-between xl:col-span-2 items-end">
-        <div className="relative mb-3">
-          <Image
-            src="/images/profile.png"
-            height={144}
-            width={100}
-            alt="Alex Ingrams"
-          />
-        </div>
+      <div className="mb-3">
+        <Image
+          className="rounded-full "
+          src="/images/profile.png"
+          height={120}
+          width={120}
+          objectFit="cover"
+          layout="fixed"
+          alt="Alex Ingrams"
+        />
+      </div>
         <div className="flex flex-col">
           <div className="flex-grow"></div>
           <h3 className="py-4 font-khand underline decoration-yellow-600 decoration-2 text-5xl leading-8 tracking-tight text-black">

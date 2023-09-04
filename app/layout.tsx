@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Khand, Playfair_Display } from "next/font/google";
+import { Inter, Khand } from "next/font/google";
 import Link from "next/link";
 import Logo from "./alpha-logo.svg";
 import Image from "next/image";
+import SocialIcons from "./components/social-icons/index"
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const khand = Khand({
@@ -33,23 +34,27 @@ export default function RootLayout({
                 <Link href="/" aria-label="Alex-Homepage">
                   <div className="flex items-center justify-between">
                     <div>
-                      <Image priority src={Logo} alt="Alex's HomePage" />
+                      <Image
+                        priority
+                        src={Logo}
+                        width={60}
+                        height={60}
+                        alt="Alex's HomePage"
+                      />
                     </div>
-                      <p className="font-khand text-yellow-600 pt-3 -ml-2">HOME</p>
+                    <p className="font-khand text-yellow-600 pt-3 -ml-2">
+                      HOME
+                    </p>
                   </div>
                 </Link>
               </div>
               <div className="flex items-center text-base leading-5"></div>
             </header>
             <main className="flex flex-col items-center">{children}</main>
-            <footer >
+            <footer>
               <div className="flex flex-col items-center">
                 <div className="mb-3 flex space-x-4">
-                  {/* <SocialIcon kind="googleScholar" href='https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en' size="6" />
-          <SocialIcon kind="linkedin" href='https://www.linkedin.com/in/aringrams/?originalSubdomain=nl' size="6" />
-          <SocialIcon kind="twitter" href='https://twitter.com/alexingrams' size="6" />
-          <SocialIcon kind="researchGate" href='https://www.researchgate.net/profile/Alex-Ingrams' size="6" />
-          <SocialIcon kind="mail" href='mailto:a.r.ingrams@fgga.leidenuniv.nl' size="6" /> */}
+                 <SocialIcons href={undefined} kind={undefined} size={undefined} />
                 </div>
                 <div className="mb-2 flex flex-col items-center text-yellow-600 space-x-2 text-sm text-gray-600 ">
                   <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
