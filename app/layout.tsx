@@ -35,7 +35,7 @@ export default function RootLayout({
                     <div>
                       <Image priority src={Logo} alt="Alex's HomePage" />
                     </div>
-                      <p className="font-khand text-yellow-600 pt-3 -ml-2">Home</p>
+                      <p className="font-khand text-yellow-600 pt-3 -ml-2">HOME</p>
                   </div>
                 </Link>
               </div>

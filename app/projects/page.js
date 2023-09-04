@@ -71,7 +71,7 @@ export default function Projects() {
           </div>
         </div>
       <div className=" pb-2 text-yellow-600 font-khand text-right">
-        <Link href="/admin">Admin</Link>
+        <Link href="/admin">ADMIN</Link>
       </div>
       </div>
     </>
