@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import OpenResume from './components/OpenResume'
+
+
 export default function Home() {
+
   return (
     <div className="flex-col items-center">
       <div className="flex justify-between xl:col-span-2 items-end">
@@ -39,9 +43,7 @@ export default function Home() {
         >
           Current Research
         </Link>
-        <button className="m-10 rounded border-2 border-yellow-600 bg-neutral-100 px-4 py-2 font-khand font-bold  text-black  ">
-          Resume
-        </button>
+        <OpenResume />
       </div>
     </div>
   );
