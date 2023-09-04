@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Playfair_Display } from "next/font/google";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col">
-          <div className="flex-grow"></div> {/* Spacer to push h3 to the bottom */}
+          <div className="flex-grow"></div>
           <h3 className="py-4 font-khand underline decoration-yellow-600 decoration-2 text-5xl leading-8 tracking-tight text-black">
             Alex Ingrams
           </h3>

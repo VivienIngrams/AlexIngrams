@@ -1,50 +1,10 @@
-'use client'
+import React from "react";
 
-import React, { useState, useEffect, useCallback } from 'react'
+import Card from "../components/Card";
+import Link from "next/link";
 
-import Card from '../components/Card'
-import Link from 'next/link'
-
-export default function Projects() {
-  const [projects, setProjects] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
-
-  const fetchprojectsHandler = useCallback(async () => {
-    setIsLoading(true)
-    setError(null)
-    try {
-      const response = await fetch(
-        'https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json'
-      )
-      if (!response.ok) {
-        throw new Error('Something went wrong!')
-      }
-
-      const data = await response.json()
-
-      const projectsData = []
-
-      for (const key in data) {
-        projectsData.push({
-          id: key,
-          title: data[key].title,
-          description: data[key].description,
-          href: data[key].href,
-          linkText: data[key].linkText,
-        })
-      }
-
-      setProjects(projectsData)
-    } catch (error) {
-      setError(error.message)
-    }
-    setIsLoading(false)
-  }, [])
-
-  useEffect(() => {
-    fetchprojectsHandler()
-  }, [fetchprojectsHandler])
+export default async function Projects() {
+  const projectsData = await getData();
 
   return (
     <>
@@ -55,11 +15,9 @@ export default function Projects() {
           </h1>
           <p className="text-lg leading-7 text-gray-500 "></p>
         </div>
-        {isLoading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            {projects.map((d) => (
+            {projectsData.map((d) => (
               <Card
                 key={d.id}
                 title={d.title}
@@ -70,10 +28,39 @@ export default function Projects() {
             ))}
           </div>
         </div>
-      <div className=" pb-2 text-yellow-600 font-khand text-right">
-        <Link href="/admin">ADMIN</Link>
-      </div>
+        <div className=" pb-2 text-yellow-600 font-khand text-right">
+          <Link href="/admin">ADMIN</Link>
+        </div>
       </div>
     </>
-  )
+  );
+}
+
+async function getData() {
+  try {
+    const response = await fetch(
+      "https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json"
+    );
+    if (!response.ok) {
+      throw new Error("Something went wrong!");
+    }
+
+    const data = await response.json();
+
+    const projectsData = [];
+
+    for (const key in data) {
+      projectsData.push({
+        id: key,
+        title: data[key].title,
+        description: data[key].description,
+        href: data[key].href,
+        linkText: data[key].linkText,
+      });
+    }
+    return projectsData;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
