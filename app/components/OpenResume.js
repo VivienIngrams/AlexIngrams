@@ -1,7 +1,6 @@
 "use client";
 
 const openResume = () => {
-    console.log('cv')
     window.open('cv_alex.pdf', '_blank');
   }
 

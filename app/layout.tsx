@@ -54,7 +54,7 @@ export default function RootLayout({
             <footer>
               <div className="flex flex-col items-center">
                 <div className="mb-3 flex space-x-4">
-                 <SocialIcons href={undefined} kind={undefined} size={undefined} />
+                 <SocialIcons />
                 </div>
                 <div className="mb-2 flex flex-col items-center text-yellow-600 space-x-2 text-sm text-gray-600 ">
                   <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
