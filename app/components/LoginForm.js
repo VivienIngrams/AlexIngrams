@@ -1,29 +1,30 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from "react";
 
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-import auth from '../../firebase'
+import auth from "../../firebase";
 
-function LoginForm(props) {
-  const emailRef = useRef('')
-  const passwordRef = useRef('')
+function LoginForm() {
+  const [errorMessage, setErrorMessage] = useState("")
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
 
   function submitHandler(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const email = emailRef.current.value
-    const password = passwordRef.current.value
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user
-        console.log(user)
-        props.onLogin()
+        const user = userCredential.user;
       })
       .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-        console.log(errorMessage)
-      })
+        const errMessage = error.message
+        const errorCode = error.code;
+        console.log(errMessage, errorCode);
+        setErrorMessage(errMessage)
+      });
   }
 
   return (
@@ -34,7 +35,10 @@ function LoginForm(props) {
         </h2>
         <div className="flex flex-col items-end ">
           <div className="p-5">
-            <label className="p-2 font-bold  font-normal text-black" htmlFor="email">
+            <label
+              className="p-2 font-bold  font-normal text-black"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -45,7 +49,10 @@ function LoginForm(props) {
             />
           </div>
           <div className="p-5 ">
-            <label className="p-2 font-bold font-normal text-black" htmlFor="password">
+            <label
+              className="p-2 font-bold font-normal text-black"
+              htmlFor="password"
+            >
               Password
             </label>
             <input
@@ -55,16 +62,19 @@ function LoginForm(props) {
               ref={passwordRef}
             />
           </div>
-
+          <p>{errorMessage}</p>
           <div className="m-10 rounded-2xl bg-yellow-600 p-2">
-            <button className="rounded-2xl text-center text-black" type="submit">
+            <button
+              className="rounded-2xl text-center text-black"
+              type="submit"
+            >
               Log In
             </button>
           </div>
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

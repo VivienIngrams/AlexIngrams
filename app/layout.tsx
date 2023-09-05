@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Khand } from "next/font/google";
 import Link from "next/link";
 import Logo from "./alpha-logo.svg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import SocialIcons from "./components/social-icons/index"
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });

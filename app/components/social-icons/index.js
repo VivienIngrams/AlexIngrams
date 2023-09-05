@@ -4,7 +4,7 @@ import Twitter from "./twitter.svg";
 import ResearchGate from "./researchgate.svg";
 import Github from "./github.svg";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Socials = [
   { src: GoogleScholar, href: "https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en" },

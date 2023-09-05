@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import auth from "../../firebase";
-import { getDatabase, ref, set } from "firebase/database";
+import auth, { database } from "../../firebase";
+import { ref, set, push, child, get } from "firebase/database";
+import { onAuthStateChanged } from "firebase/auth";
 
 import LoginForm from "../components/LoginForm";
 import AddProject from "../components/AddProject";
@@ -12,28 +13,26 @@ import EditProjects from "../components/EditProjects";
 function AdminPage() {
   const [logIn, setLogIn] = useState(false);
   const [message, setMessage] = useState("");
-
-  function loginHandler() {
-    setLogIn(true);
+  
+  const monitorAuthState = async () => {
+    onAuthStateChanged(auth, user => {
+      if(user) {
+        setLogIn(true)
+      }
+    })
   }
+  monitorAuthState()
 
   async function addProjectHandler(project) {
-    const response = await fetch(
-      "https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json",
-      {
-        method: "POST",
-        body: JSON.stringify(project),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      setMessage("Successfully added project to database!");
-    } else {
-      console.log("Error:", response.statusText);
+    try {
+      const newProjectRef = push(ref(database, "project"));
+      const newProjectId = newProjectRef.key;
+
+      await set(newProjectRef, project);
+
+      setMessage("Successfully added project to database");
+    } catch (error) {
+      console.error("Error adding project:", error);
       setMessage("Unable to add project to database");
     }
   }
@@ -41,11 +40,11 @@ function AdminPage() {
   return (
     <div className="flex-col items-center">
       <div className=" flex flex-col items-end xl:col-span-2 ">
-        {!logIn && <LoginForm onLogin={loginHandler} />}
+        {!logIn && <LoginForm />}
         {logIn && (
           <>
             <AddProject onAddProject={addProjectHandler} message={message} />
-            <EditProjects />
+            <EditProjects/>
           </>
         )}
       </div>

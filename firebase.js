@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-
+import { getDatabase } from "firebase/database"
 import { getAuth } from 'firebase/auth'
 
 const clientCredentials = {
@@ -17,3 +17,5 @@ const app = initializeApp(clientCredentials)
 const auth = getAuth(app)
 
 export default auth
+
+export const database = getDatabase(app)
