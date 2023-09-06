@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/legacy/image";
+import Link from "next/link"
+import Image from "next/legacy/image"
 
-import OpenResume from "./components/OpenResume";
+import OpenResume from "./components/OpenResume"
 
 export default function Home() {
   return (
@@ -47,5 +47,5 @@ export default function Home() {
         <OpenResume />
       </div>
     </div>
-  );
+  )
 }

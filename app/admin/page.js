@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
-import auth, { database } from "../../firebase";
-import { ref, set, push } from "firebase/database";
-import { onAuthStateChanged } from "firebase/auth";
+import auth, { database } from "../../firebase"
+import { ref, set, push } from "firebase/database"
+import { onAuthStateChanged } from "firebase/auth"
 
-import LoginForm from "../components/admin/LoginForm";
-import AddProject from "../components/admin/AddProject";
-import EditProjects from "../components/admin/EditProjects";
+import LoginForm from "../components/admin/LoginForm"
+import AddProject from "../components/admin/AddProject"
+import EditProjects from "../components/admin/EditProjects"
 
 function AdminPage() {
-  const [logIn, setLogIn] = useState(false);
-  const [message, setMessage] = useState("");
+  const [logIn, setLogIn] = useState(false)
+  const [message, setMessage] = useState("")
   
   const monitorAuthState = async () => {
     onAuthStateChanged(auth, user => {
@@ -25,15 +25,15 @@ function AdminPage() {
 
   async function addProjectHandler(project) {
     try {
-      const newProjectRef = push(ref(database, "project"));
-      const newProjectId = newProjectRef.key;
+      const newProjectRef = push(ref(database, "project"))
+      const newProjectId = newProjectRef.key
 
-      await set(newProjectRef, project);
+      await set(newProjectRef, project)
 
-      setMessage("Successfully added project to database");
+      setMessage("Successfully added project to database")
     } catch (error) {
-      console.error("Error adding project:", error);
-      setMessage("Unable to add project to database");
+      console.error("Error adding project:", error)
+      setMessage("Unable to add project to database")
     }
   }
 
@@ -49,7 +49,7 @@ function AdminPage() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default AdminPage;
+export default AdminPage

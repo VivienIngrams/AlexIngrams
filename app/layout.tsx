@@ -1,28 +1,29 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter, Khand } from "next/font/google";
-import Link from "next/link";
-import Logo from "./alpha-logo.svg";
-import Image from "next/legacy/image";
+
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter, Khand } from "next/font/google"
+import Link from "next/link"
+import Logo from "./alpha-logo.svg"
+import Image from "next/legacy/image"
 import SocialIcons from "./components/social-icons/index"
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] })
 const khand = Khand({
   weight: ["400"],
   variable: "--font-khand",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Alex Ingrams",
   description:
     "Assistant professor in the Institute of Public Administration at Leiden University, researching the role of transparency and technology in public administration and policy",
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -73,5 +74,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

@@ -1,40 +1,42 @@
-import React, { useState, useEffect } from "react";
-import { database } from "../../../firebase";
-import { update, ref, remove } from "firebase/database";
+import React, { useState } from "react"
+
+import { database } from "../../../firebase"
+import { update, ref, remove } from "firebase/database"
 
 function ProjectForm({ project, onUpdate, onDelete }) {
-  const [editedProject, setEditedProject] = useState(project);
+  const [editedProject, setEditedProject] = useState(project)
+  const [message, setMessage ] = useState('')
 
   const handleInputChange = (field, value) => {
     setEditedProject((prevProject) => ({
       ...prevProject,
       [field]: value,
-    }));
-  };
+    }))
+  }
 
   const handleSaveClick = async () => {
     try {
-      const projectPath = `project/${project.id}`;
-      const dbRef = ref(database, projectPath);
-      await update(dbRef, editedProject);
-      console.log("Successfully updated project in the database!");
-      onUpdate(editedProject);
+      const projectPath = `project/${project.id}`
+      const dbRef = ref(database, projectPath)
+      await update(dbRef, editedProject)
+      setMessage("Successfully updated project in the database!")
+      onUpdate(editedProject)
     } catch (error) {
-      console.error("Error updating project:", error);
+      console.error("Error updating project:", error)
     }
-  };
+  }
 
   const handleDeleteClick = async () => {
     try {
-      const projectPath = `project/${project.id}`;
-      const dbRef = ref(database, projectPath);
-      await remove(dbRef);
-      console.log("Successfully deleted project in the database!");
-      onDelete(project.id);
+      const projectPath = `project/${project.id}`
+      const dbRef = ref(database, projectPath)
+      await remove(dbRef)
+      setMessage("Successfully deleted project in the database!")
+      onDelete(project.id)
     } catch (error) {
-      console.error("Error deleting project:", error);
+      console.error("Error deleting project:", error)
     }
-  };
+  }
 
   return (
     <form key={project.id} className="flex flex-col items-end">
@@ -102,6 +104,9 @@ function ProjectForm({ project, onUpdate, onDelete }) {
           }
         />
       </div>
+      <div className="m-5 text-center text-yellow-600">
+            <p>{message}</p>
+          </div>
       <div className="mb-20 flex flex-row justify-between">
         <div className="mb-10 rounded-2xl bg-yellow-600 p-2">
           <button
@@ -124,7 +129,7 @@ function ProjectForm({ project, onUpdate, onDelete }) {
         </div>
       </div>
     </form>
-  );
+  )
 }
 
-export default ProjectForm;
+export default ProjectForm
