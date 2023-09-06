@@ -6,9 +6,9 @@ import auth, { database } from "../../firebase";
 import { ref, set, push, child, get } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 
-import LoginForm from "../components/LoginForm";
-import AddProject from "../components/AddProject";
-import EditProjects from "../components/EditProjects";
+import LoginForm from "../components/admin/LoginForm";
+import AddProject from "../components/admin/AddProject";
+import EditProjects from "../components/admin/EditProjects";
 
 function AdminPage() {
   const [logIn, setLogIn] = useState(false);
