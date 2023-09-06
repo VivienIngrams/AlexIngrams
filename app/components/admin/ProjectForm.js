@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { database } from "../../../firebase";
-import { update, ref } from "firebase/database";
+import { update, ref, remove } from "firebase/database";
 
 function ProjectForm({ project, onUpdate, onDelete }) {
   const [editedProject, setEditedProject] = useState(project);
@@ -21,6 +21,18 @@ function ProjectForm({ project, onUpdate, onDelete }) {
       onUpdate(editedProject);
     } catch (error) {
       console.error("Error updating project:", error);
+    }
+  };
+
+  const handleDeleteClick = async () => {
+    try {
+      const projectPath = `project/${project.id}`;
+      const dbRef = ref(database, projectPath);
+      await remove(dbRef);
+      console.log("Successfully deleted project in the database!");
+      onDelete(project.id);
+    } catch (error) {
+      console.error("Error deleting project:", error);
     }
   };
 
@@ -93,18 +105,19 @@ function ProjectForm({ project, onUpdate, onDelete }) {
       <div className="mb-20 flex flex-row justify-between">
         <div className="mb-10 rounded-2xl bg-yellow-600 p-2">
           <button
-            className="rounded-2xl text-center text-black"
+            className="rounded-2xl text-center text-white"
             type="button"
             onClick={handleSaveClick}
           >
             Save Project
           </button>
         </div>
-        <div className="mx-5 mb-10 rounded-2xl bg-red-800 p-2">
+        <div className="mx-5 mb-10 rounded-2xl bg-red-700 p-2">
           <button
-            className="rounded-2xl text-center text-black"
+            className="rounded-2xl text-center text-white
+            "
             type="button"
-            onClick={() => onDelete(project.id)}
+            onClick={handleDeleteClick}
           >
             Delete Project
           </button>

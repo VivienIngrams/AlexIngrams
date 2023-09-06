@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import auth, { database } from "../../firebase";
-import { ref, set, push, child, get } from "firebase/database";
+import { ref, set, push } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 
 import LoginForm from "../components/admin/LoginForm";

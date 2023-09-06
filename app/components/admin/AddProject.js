@@ -45,7 +45,7 @@ function AddProject(props) {
               Title
             </label>
             <textarea
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600"
               rows="4"
               id="title"
               ref={titleRef}
@@ -58,7 +58,7 @@ function AddProject(props) {
               Description
             </label>
             <textarea
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600"
               rows="8"
               id="description"
               ref={descriptionRef}
@@ -71,7 +71,7 @@ function AddProject(props) {
               Link
             </label>
             <input
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
               type="text"
               id="link"
               ref={linkRef}
@@ -84,7 +84,7 @@ function AddProject(props) {
               Text for link
             </label>
             <textarea
-              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
+              className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
               rows="1"
               id="link-text"
               ref={linkTextRef}
@@ -96,7 +96,7 @@ function AddProject(props) {
             <p>{props.message}</p>
           </div>
           <div className="mx-10 mb-20 rounded-2xl bg-yellow-600 p-2">
-            <button className="rounded-2xl text-center text-black" type="submit">
+            <button className="rounded-2xl text-center text-white" type="submit">
               Add Project
             </button>
           </div>
