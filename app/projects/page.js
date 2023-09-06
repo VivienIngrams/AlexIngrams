@@ -1,12 +1,12 @@
-import React from "react";
-import { database } from "../../firebase";
-import { ref, get, child } from "firebase/database";
+import React from "react"
+import { database } from "../../firebase"
+import { ref, get, child } from "firebase/database"
 
-import Card from "../components/Card";
-import Link from "next/link";
+import Card from "../components/Card"
+import Link from "next/link"
 
 export default async function Projects() {
-  const projectsData = await getData();
+  const projectsData = await getData()
 
   return (
     <>
@@ -35,34 +35,34 @@ export default async function Projects() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 async function getData() {
     try {
-      const dbRef = ref(database);
-      const snapshot = await get(child(dbRef, "project"));
+      const dbRef = ref(database)
+      const snapshot = await get(child(dbRef, "project"))
       if (snapshot.exists()) {
-        const data = snapshot.val();
-        const projectsData = Object.values(data);
+        const data = snapshot.val()
+        const projectsData = Object.values(data)
         return projectsData
       } else {
-        console.log("No data available");
+        console.log("No data available")
       }
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   // try {
   //   const response = await fetch(
   //     "https://projects-cec6a-default-rtdb.europe-west1.firebasedatabase.app/project.json"
-  //   );
+  //   )
   //   if (!response.ok) {
-  //     throw new Error("Something went wrong!");
+  //     throw new Error("Something went wrong!")
   //   }
 
-  //   const data = await response.json();
+  //   const data = await response.json()
 
-  //   const projectsData = [];
+  //   const projectsData = []
 
   //   for (const key in data) {
   //     projectsData.push({
@@ -71,11 +71,11 @@ async function getData() {
   //       description: data[key].description,
   //       href: data[key].href,
   //       linkText: data[key].linkText,
-  //     });
+  //     })
   //   }
-  //   return projectsData;
+  //   return projectsData
   // } catch (error) {
-  //   console.error(error);
-  //   return [];
+  //   console.error(error)
+  //   return []
   // }
 }

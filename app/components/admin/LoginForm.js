@@ -1,30 +1,30 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from "react"
 
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth"
 
-import auth from "../../../firebase";
+import auth from "../../../firebase"
 
 function LoginForm() {
   const [errorMessage, setErrorMessage] = useState("")
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
+  const emailRef = useRef("")
+  const passwordRef = useRef("")
 
   function submitHandler(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        const user = userCredential.user
       })
       .catch((error) => {
         const errMessage = error.message
-        const errorCode = error.code;
-        console.log(errMessage, errorCode);
+        const errorCode = error.code
+        console.log(errMessage, errorCode)
         setErrorMessage(errMessage)
-      });
+      })
   }
 
   return (
@@ -74,7 +74,7 @@ function LoginForm() {
         </div>
       </form>
     </div>
-  );
+  )
 }
 
-export default LoginForm;
+export default LoginForm

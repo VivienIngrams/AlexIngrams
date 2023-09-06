@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         inter: ['var(--font-inter)'],
         khand: ['var(--font-khand)'],
+        playfair: ['var(--font-playfair)'],
       } 
     },
   },

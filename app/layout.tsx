@@ -1,7 +1,7 @@
 
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter, Khand } from "next/font/google"
+import { Inter, Khand, Playfair_Display } from "next/font/google"
 import Link from "next/link"
 import Logo from "./alpha-logo.svg"
 import Image from "next/legacy/image"
@@ -11,6 +11,11 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"] })
 const khand = Khand({
   weight: ["400"],
   variable: "--font-khand",
+  subsets: ["latin"],
+})
+const playfair = Playfair_Display({
+  weight: ["400"],
+  variable: "--font-playfair",
   subsets: ["latin"],
 })
 
@@ -27,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={` min-h-screen ${khand.variable} ${inter.variable}`}>
+      <body className={` min-h-screen ${khand.variable} ${inter.variable} ${playfair.variable}`}>
         <div className="xl:max-w-8xl mx-auto max-w-5xl px-4 sm:px-6 xl:px-0">
           <div className="flex h-screen flex-col justify-between pt-5 sm:pb-10">
             <header className="flex w-full items-center justify-between">

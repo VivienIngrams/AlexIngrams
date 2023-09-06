@@ -20,12 +20,12 @@ export default function Home() {
       </div>
         <div className="flex flex-col">
           <div className="flex-grow"></div>
-          <h3 className="py-4 font-khand underline decoration-yellow-600 decoration-2 text-5xl leading-8 tracking-tight text-black">
+          <h3 className="py-4 font-playfair underline decoration-yellow-600 text-right decoration-2 text-5xl leading-8 tracking-tight text-black">
             Alex Ingrams
           </h3>
         </div>
       </div>
-      <div className="text-sm md:text-md max-w-none font-inter text-neutral-500 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
+      <div className="text-base md:text-lg max-w-none font-khand text-neutral-500 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
         <div>
           <p>
             Assistant professor in the Institute of Public Administration at

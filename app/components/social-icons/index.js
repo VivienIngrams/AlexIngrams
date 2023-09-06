@@ -1,10 +1,10 @@
-import GoogleScholar from "./google-scholar.svg";
-import Linkedin from "./linkedin.svg";
-import Twitter from "./twitter.svg";
-import ResearchGate from "./researchgate.svg";
-import Github from "./github.svg";
+import GoogleScholar from "./google-scholar.svg"
+import Linkedin from "./linkedin.svg"
+import Twitter from "./twitter.svg"
+import ResearchGate from "./researchgate.svg"
+import Github from "./github.svg"
 
-import Image from "next/legacy/image";
+import Image from "next/legacy/image"
 
 const Socials = [
   { src: GoogleScholar, href: "https://scholar.google.nl/citations?user=SA91dyQAAAAJ&hl=en" },
@@ -12,7 +12,7 @@ const Socials = [
   { src: Twitter, href: "https://twitter.com/alexingrams" },
   { src: ResearchGate, href: "https://www.researchgate.net/profile/Alex-Ingrams" },
   { src: Github, href: "https://www.github.com/alexingrams" }
-];
+]
 
 const SocialIcons = () => {
   return (
@@ -28,7 +28,7 @@ const SocialIcons = () => {
         </a>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default SocialIcons;
+export default SocialIcons

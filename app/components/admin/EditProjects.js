@@ -43,7 +43,6 @@ function EditProjects() {
   }
 
   const handleDeleteProject = async (projectId) => {
-
     const updatedProjects = projects.filter(
       (project) => project.id !== projectId
     )

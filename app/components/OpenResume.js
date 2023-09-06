@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
 const openResume = () => {
-    window.open('cv_alex.pdf', '_blank');
+    window.open('cv_alex.pdf', '_blank')
   }
 
 export default function OpenResume() {
@@ -13,5 +13,5 @@ export default function OpenResume() {
     >
       Resume
     </button>
-  );
+  )
 }
