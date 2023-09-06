@@ -24,7 +24,7 @@ const SocialIcons = () => {
           href={social.href}
           rel="noopener noreferrer"
         >
-          <Image alt="Social Icon" src={social.src} width={15} height={15} />
+          <Image alt="Social Icon" src={social.src} width={25} height={22} />
         </a>
       ))}
     </>

@@ -43,8 +43,13 @@ function EditProjects() {
 
   // Handle selecting a project for editing
   const handleSelectProject = (project) => {
-    setEditedProject(project); // Set editedProject to the selected project
-    handleEditClick()
+    setEditedProject({
+      id: project.id,
+      title: project.title,
+      description: project.description,
+      href: project.href,
+      linkText: project.linkText,
+    });
   };
 
   // Handle editing a project
@@ -54,15 +59,19 @@ function EditProjects() {
       const updates = {
         [projectPath]: editedProject,
       };
-      const dbRef = ref(database, projectPath)
-      update(dbRef, editedProject)
+      const dbRef = ref(database, projectPath);
+      await update(dbRef, editedProject);
       console.log("Successfully updated project in the database!");
     } catch (error) {
       console.error("Error updating project:", error);
     }
   };
 
-  // Render the form with project data
+  // Handle deleting a project (you can implement this function)
+  const handleDeleteClick = (project) => {
+    // Implement your project deletion logic here
+  };
+
   return (
     <div className="flex flex-col justify-around sm:flex-row">
       <form>
@@ -83,7 +92,7 @@ function EditProjects() {
                 className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
                 rows="4"
                 id="title"
-                value={editedProject.title} // Use editedProject values for editing
+                value={editedProject.title}
                 onChange={(event) =>
                   handleInputChange("title", event.target.value)
                 }
@@ -100,7 +109,7 @@ function EditProjects() {
                 className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
                 rows="8"
                 id="description"
-                value={editedProject.description} // Use editedProject values for editing
+                value={editedProject.description}
                 onChange={(event) =>
                   handleInputChange("description", event.target.value)
                 }
@@ -117,7 +126,7 @@ function EditProjects() {
                 className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
                 type="text"
                 id="link"
-                value={editedProject.href} // Use editedProject values for editing
+                value={editedProject.href}
                 onChange={(event) =>
                   handleInputChange("href", event.target.value)
                 }
@@ -134,7 +143,7 @@ function EditProjects() {
                 className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-black"
                 rows="1"
                 id="link-text"
-                value={editedProject.linkText} // Use editedProject values for editing
+                value={editedProject.linkText}
                 onChange={(event) =>
                   handleInputChange("linkText", event.target.value)
                 }
@@ -144,8 +153,8 @@ function EditProjects() {
               <div className="mb-10 rounded-2xl bg-yellow-600 p-2">
                 <button
                   className="rounded-2xl text-center text-black"
-                  type="button" // Change type to "button"
-                  onClick={() => handleSelectProject(project)} // Select the project for editing
+                  type="button"
+                  onClick={() => handleSelectProject(project)}
                 >
                   Edit Project
                 </button>
@@ -153,7 +162,7 @@ function EditProjects() {
               <div className="mx-5 mb-10 rounded-2xl bg-red-600 p-2">
                 <button
                   className="rounded-2xl text-center text-black"
-                  type="submit"
+                  type="button"
                   onClick={() => handleDeleteClick(project)}
                 >
                   Delete Project
