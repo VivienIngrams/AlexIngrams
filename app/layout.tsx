@@ -48,10 +48,11 @@ export default function RootLayout({
                         alt="Alex's HomePage"
                       />
                     </div>
-                    <p className="font-khand text-yellow-600 pt-3 -ml-2">
+                    {/* <p className="font-khand text-yellow-600 pt-3 -ml-2">
                       HOME
-                    </p>
+                    </p> */}
                   </div>
+                  
                 </Link>
               </div>
               <div className="flex items-center text-base leading-5"></div>
@@ -62,7 +63,7 @@ export default function RootLayout({
                 <div className=" flex space-x-4">
                  <SocialIcons />
                 </div>
-                <div className="mb-2 flex flex-col items-center text-yellow-600 space-x-2 text-sm text-gray-600 ">
+                <div className="mb-2 flex flex-col items-center text-yellow-600 space-x-2 text-sm ">
                   <Link href="mailto:a.r.ingrams@fgga.leidenuniv.nl">
                     a.r.ingrams@fgga.leidenuniv.nl
                   </Link>
