@@ -9,7 +9,7 @@ export default function Home() {
       <div className="flex justify-end xl:col-span-2 items-end">
     
         <div className="flex flex-col items-end">
-          <div className="flex-grow"><div className="mb-3 rounded bg-black h-[130px] w-[100px] px-auto shadow-xl shadow-neutral-400">
+          <div className="flex-grow"><div className="mb-3 rounded bg-black h-[130px] w-[100px] px-auto ">
         <Image
           className=" rounded"
           src="/images/profile-r.png"
@@ -26,7 +26,7 @@ export default function Home() {
           </h3>
         </div>
       </div>
-      <div className="text-base md:text-lg max-w-none font-khand text-neutral-500 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
+      <div className="text-base md:text-lg max-w-none font-khand text-neutral-100 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
         <div>
           <p>
             Assistant professor in the Institute of Public Administration at
@@ -40,7 +40,7 @@ export default function Home() {
       </div>
       <div className="items-center text-center xl:col-span-2 py-4">
         <Link
-          className="mx-10 rounded border-2 shadow-xl shadow-neutral-400 border-yellow-600 bg-neutral-100 px-4 py-2 font-khand font-bold text-black "
+          className="mx-10 rounded border-2  border-yellow-600 bg-neutral-100 px-4 py-2 font-khand font-bold text-black "
           href="/projects"
         >
           Current Research
