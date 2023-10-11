@@ -42,13 +42,13 @@ function ProjectForm({ project, onUpdate, onDelete }) {
     <form key={project.id} className="flex flex-col items-end">
       <div className="p-5">
         <label
-          className="p-2 font-bold font-normal text-black"
+          className="p-2  font-normal text-black"
           htmlFor={`title-${project.id}`}
         >
           Title
         </label>
         <textarea
-          className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
+          className="w-80 rounded-md border-2 bg-neutral-100 border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
           rows="4"
           id={`title-${project.id}`}
           value={editedProject.title}
@@ -57,13 +57,13 @@ function ProjectForm({ project, onUpdate, onDelete }) {
       </div>
       <div className="p-5">
         <label
-          className="p-2 font-bold font-normal text-black"
+          className="p-2 font-normal text-black"
           htmlFor={`description-${project.id}`}
         >
           Description
         </label>
         <textarea
-          className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600"
+          className="w-80 rounded-md border-2 bg-neutral-100 border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600"
           rows="8"
           id={`description-${project.id}`}
           value={editedProject.description}
@@ -74,13 +74,13 @@ function ProjectForm({ project, onUpdate, onDelete }) {
       </div>
       <div className="p-5">
         <label
-          className="p-2 font-bold font-normal text-black"
+          className="p-2 font-normal text-black"
           htmlFor={`link-${project.id}`}
         >
           Link
         </label>
         <input
-          className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
+          className="w-80 rounded-md border-2 bg-neutral-100 border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
           type="text"
           id={`link-${project.id}`}
           value={editedProject.href}
@@ -89,13 +89,13 @@ function ProjectForm({ project, onUpdate, onDelete }) {
       </div>
       <div className="p-5">
         <label
-          className="p-2 font-bold font-normal text-black"
+          className="p-2  font-normal text-black"
           htmlFor={`link-text-${project.id}`}
         >
           Text for link
         </label>
         <textarea
-          className="w-80 rounded-md border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
+          className="w-80 rounded-md border-2 bg-neutral-100 border-yellow-600 px-4 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-600 "
           rows="1"
           id={`link-text-${project.id}`}
           value={editedProject.linkText}
