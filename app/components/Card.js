@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Card = ({ title, description, href, linkText }) => (
   <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
     <div
-      className={`overflow-hidden rounded-md border-2 border-yellow-600 border-opacity-60 bg-white/60 `}
+      className={`overflow-hidden rounded-md border-2 border-yellow-600 border-opacity-60 bg-neutral-100 `}
     >
       <div className="p-6">
         <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight text-neutral-600">

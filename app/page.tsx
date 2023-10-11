@@ -26,7 +26,7 @@ export default function Home() {
           </h3>
         </div>
       </div>
-      <div className="text-base md:text-lg max-w-none font-khand text-neutral-100 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
+      <div className="text-base md:text-lg max-w-none font-khand text-neutral-400 pt-2 text-right md:ml-20 md:pl-20 md:pb-5">
         <div>
           <p>
             Assistant professor in the Institute of Public Administration at
